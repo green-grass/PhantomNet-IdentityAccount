@@ -2,7 +2,8 @@
   "projects": [
     "src",
     "test",
-    "src/extensions"
+    "src/extensions",
+    "../PhantomNet-Mvc/src/extensions"
   ],
   "sdk": {
     "version": "1.0.0-preview2-003121"
