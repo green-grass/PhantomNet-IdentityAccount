@@ -1,5 +1,15 @@
 ﻿{
+  "title": "PhantomNet.AspNetCore.IdentityAccount",
+  "copyright": "Green Grass",
+  "description": "PhantomNet.AspNetCore.IdentityAccount class library",
+  "language": "en",
   "version": "1.0.0-beta-*",
+  "authors": [ "Minh Nguyen" ],
+
+  "packOptions": {
+    "licenseUrl": "https://github.com/green-grass/PhantomNet-IdentityAccount/blob/master/LICENSE",
+    "projectUrl": "https://github.com/green-grass/PhantomNet-IdentityAccount"
+  },
 
   "dependencies": {
     "AutoMapper": "5.0.2",
