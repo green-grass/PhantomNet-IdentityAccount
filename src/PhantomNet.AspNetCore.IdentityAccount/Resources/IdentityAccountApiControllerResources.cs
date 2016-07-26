@@ -1,4 +1,4 @@
-﻿namespace PhantomNet.IdentityAccount.Resources
+﻿namespace PhantomNet.AspNetCore.IdentityAccount.Resources
 {
     public class IdentityAccountApiControllerResources { }
 }

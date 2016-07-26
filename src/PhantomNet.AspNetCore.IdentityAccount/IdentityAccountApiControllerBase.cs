@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Localization;
 using PhantomNet.Entities.Mvc;
 
-namespace PhantomNet.IdentityAccount
+namespace PhantomNet.AspNetCore.IdentityAccount
 {
     [Authorize]
     [Route("api/accounts")]

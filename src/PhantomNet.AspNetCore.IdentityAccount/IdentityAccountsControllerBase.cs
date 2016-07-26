@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace PhantomNet.IdentityAccount
+namespace PhantomNet.AspNetCore.IdentityAccount
 {
     [Authorize]
     [Route("Accounts")]

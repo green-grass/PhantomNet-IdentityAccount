@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using PhantomNet.IdentityAccount;
+using PhantomNet.AspNetCore.IdentityAccount;
 
 namespace Microsoft.Extensions.DependencyInjection
 {

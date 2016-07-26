@@ -1,4 +1,4 @@
-﻿namespace PhantomNet.IdentityAccount
+﻿namespace PhantomNet.AspNetCore.IdentityAccount
 {
     public class IdentityAccountViewModel
     {

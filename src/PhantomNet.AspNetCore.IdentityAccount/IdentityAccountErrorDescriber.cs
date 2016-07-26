@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Localization;
-using PhantomNet.IdentityAccount.Resources;
+using PhantomNet.AspNetCore.IdentityAccount.Resources;
 
-namespace PhantomNet.IdentityAccount
+namespace PhantomNet.AspNetCore.IdentityAccount
 {
     public class IdentityAccountErrorDescriber
     {

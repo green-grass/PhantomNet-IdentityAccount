@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using PhantomNet.Entities;
 
-namespace PhantomNet.IdentityAccount
+namespace PhantomNet.AspNetCore.IdentityAccount
 {
     public class IdentityAccountManager<TAccount> : IdentityAccountManager<TAccount, IdentityAccountManager<TAccount>>
         where TAccount : IdentityUser, new()

@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using PhantomNet.Entities;
 
-namespace PhantomNet.IdentityAccount
+namespace PhantomNet.AspNetCore.IdentityAccount
 {
     public class IdentityAccountSearchDescriptor<TAccount>
         : EntitySearchDescriptorBase<TAccount>,
