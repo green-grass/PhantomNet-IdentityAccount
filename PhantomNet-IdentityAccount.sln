@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Build.ps1 = Build.ps1
 		global.json = global.json
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.AspNetCore.IdentityAccount", "src\PhantomNet.AspNetCore.IdentityAccount\PhantomNet.AspNetCore.IdentityAccount.xproj", "{E1C6272D-5A0A-4ACE-AB46-369A94BBECBB}"
