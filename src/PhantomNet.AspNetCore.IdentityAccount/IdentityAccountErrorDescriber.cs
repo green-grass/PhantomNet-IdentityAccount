@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Localization;
-using PhantomNet.AspNetCore.IdentityAccount.Resources;
 
 namespace PhantomNet.AspNetCore.IdentityAccount
 {

@@ -16,7 +16,7 @@ namespace PhantomNet.AspNetCore.IdentityAccount
         public IdentityAccountApiControllerBase(
             IdentityAccountManager<TAccount> manager,
             IdentityAccountErrorDescriber errorDescriber,
-            IStringLocalizer localizer)
+            IStringLocalizer<IdentityAccountApiControllerResources> localizer)
             : base(manager, errorDescriber, localizer)
         { }
 
