@@ -1,4 +1,4 @@
-﻿namespace PhantomNet.AspNetCore.IdentityAccount
+﻿namespace PhantomNet.AspNetCore.IdentityAccount.Resources
 {
     public class IdentityAccountErrorDescriberResources { }
 }

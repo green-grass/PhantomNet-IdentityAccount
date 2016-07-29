@@ -17,7 +17,7 @@
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
     "Microsoft.AspNetCore.Mvc.Core": "1.0.0",
     "NETStandard.Library": "1.6.0",
-    "PhantomNet.Entities.Mvc": "1.0.2"
+    "PhantomNet.Entities.Mvc": "1.0.3-*"
   },
 
   "frameworks": {

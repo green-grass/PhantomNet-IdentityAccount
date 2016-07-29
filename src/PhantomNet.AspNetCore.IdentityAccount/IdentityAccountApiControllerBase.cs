@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Localization;
+using PhantomNet.AspNetCore.IdentityAccount.Resources;
 using PhantomNet.Entities.Mvc;
 
 namespace PhantomNet.AspNetCore.IdentityAccount
