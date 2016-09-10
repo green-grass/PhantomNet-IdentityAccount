@@ -126,7 +126,7 @@ namespace PhantomNet.AspNetCore.IdentityAccount
             // TODO:: Implement search
             return new EntityQueryResult<IdentityAccountViewModel> {
                 TotalCount = UserManager.Users.Count(),
-                FilterredCount = UserManager.Users.Count(),
+                FilteredCount = UserManager.Users.Count(),
                 Results = (await UserManager.Users.ToListAsync(CancellationToken))
                                                   .Select(x => Mapper.Map<IdentityAccountViewModel>(x))
                                                   .AsQueryable()
