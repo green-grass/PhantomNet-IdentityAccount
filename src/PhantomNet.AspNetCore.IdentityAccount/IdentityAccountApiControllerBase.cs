@@ -11,15 +11,19 @@ namespace PhantomNet.AspNetCore.IdentityAccount
     [Authorize]
     [Route("api/accounts")]
     public abstract class IdentityAccountApiControllerBase<TAccount>
-        : EntityApiControllerBase<IdentityAccountViewModel, IdentityAccountViewModel, IdentityAccountSearchDescriptor<IdentityAccountViewModel>, IdentityAccountManager<TAccount>, IdentityAccountErrorDescriber>
+        : EntityApiControllerBase<IdentityAccountViewModel, IdentityAccountViewModel, IdentityAccountSearchDescriptor<IdentityAccountViewModel>, IdentityAccountManager<TAccount>>
         where TAccount : IdentityUser, new()
     {
         public IdentityAccountApiControllerBase(
             IdentityAccountManager<TAccount> manager,
-            IdentityAccountErrorDescriber errorDescriber,
-            IStringLocalizer<IdentityAccountApiControllerResources> localizer)
-            : base(manager, errorDescriber, localizer)
-        { }
+            IStringLocalizer<IdentityAccountApiControllerResources> localizer,
+            IdentityAccountErrorDescriber errorDescriber)
+            : base(manager, localizer)
+        {
+            ErrorDescriber = errorDescriber;
+        }
+
+        private IdentityAccountErrorDescriber ErrorDescriber { get; set; }
 
         protected override GenericError DescribeModelNotFoundError(IdentityAccountViewModel viewModel)
         {
