@@ -8,6 +8,7 @@ namespace PhantomNet.AspNetCore.IdentityAccount
         {
             CreateMap<TAccount, IdentityAccountViewModel>();
             CreateMap<IdentityAccountViewModel, TAccount>();
+            CreateMap<IdentityAccountViewModel, IdentityAccountViewModel>();
         }
     }
 }
