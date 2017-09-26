@@ -1,18 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7D492631-A644-452F-8A03-BED72EB8797F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DEA27AC1-F746-4C45-A218-DE931E5B494B}"
 	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
 		Build.ps1 = Build.ps1
-		global.json = global.json
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.AspNetCore.IdentityAccount", "src\PhantomNet.AspNetCore.IdentityAccount\PhantomNet.AspNetCore.IdentityAccount.xproj", "{E1C6272D-5A0A-4ACE-AB46-369A94BBECBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhantomNet.AspNetCore.IdentityAccount", "src\PhantomNet.AspNetCore.IdentityAccount\PhantomNet.AspNetCore.IdentityAccount.csproj", "{E1C6272D-5A0A-4ACE-AB46-369A94BBECBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +30,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E1C6272D-5A0A-4ACE-AB46-369A94BBECBB} = {7D492631-A644-452F-8A03-BED72EB8797F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2E4F44D-3374-409F-A8F7-5509BC4DCB0A}
 	EndGlobalSection
 EndGlobal
