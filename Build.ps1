@@ -1,4 +1,3 @@
-<#
 # Taken from psake https://github.com/psake/psake
 
 <#
