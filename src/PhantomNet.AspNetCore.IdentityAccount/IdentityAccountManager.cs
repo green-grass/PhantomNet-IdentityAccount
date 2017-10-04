@@ -156,13 +156,23 @@ namespace PhantomNet.AspNetCore.IdentityAccount
         public virtual async Task<EntityQueryResult<IdentityAccountViewModel>> SearchAsync(IEntitySearchDescriptor<IdentityAccountViewModel> searchDescriptor)
         {
             // TODO:: Implement search
-            return new EntityQueryResult<IdentityAccountViewModel> {
+
+            var users = await UserManager.Users.ToListAsync(CancellationToken);
+            var viewModels = new List<IdentityAccountViewModel>(users.Count);
+            foreach(var user in users)
+            {
+                var viewModel = Mapper.Map<IdentityAccountViewModel>(user);
+                viewModel.Roles = await UserManager.GetRolesAsync(user);
+                viewModels.Add(viewModel);
+            }
+
+            var result = new EntityQueryResult<IdentityAccountViewModel> {
                 TotalCount = UserManager.Users.Count(),
                 FilteredCount = UserManager.Users.Count(),
-                Results = (await UserManager.Users.ToListAsync(CancellationToken))
-                                                  .Select(x => Mapper.Map<IdentityAccountViewModel>(x))
-                                                  .AsQueryable()
+                Results = viewModels.AsQueryable()
             };
+
+            return result;
         }
 
         public virtual async Task<IEnumerable<string>> SearchRolesAsync(string search)
