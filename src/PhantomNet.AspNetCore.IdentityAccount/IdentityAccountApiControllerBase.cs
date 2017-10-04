@@ -29,11 +29,10 @@ namespace PhantomNet.AspNetCore.IdentityAccount
 
 
         [HttpGet("roles")]
-        public Task<IEnumerable<string>> Roles(string token)
+        public Task<IEnumerable<string>> Roles(string token, string search)
         {
             Response.Headers["token"] = token;
-            Response.Headers["fixed"] = true.ToString();
-            return Manager.GetRolesAsync();
+            return Manager.SearchRolesAsync(search);
         }
 
         protected override GenericError DescribeModelNotFoundError(IdentityAccountViewModel viewModel)

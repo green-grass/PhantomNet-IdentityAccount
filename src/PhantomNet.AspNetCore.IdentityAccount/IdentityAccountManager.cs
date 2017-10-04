@@ -165,9 +165,11 @@ namespace PhantomNet.AspNetCore.IdentityAccount
             };
         }
 
-        public virtual async Task<IEnumerable<string>> GetRolesAsync()
+        public virtual async Task<IEnumerable<string>> SearchRolesAsync(string search)
         {
-            return await RoleManager.Roles.Select(x => x.Name).ToListAsync(CancellationToken);
+            return await RoleManager.Roles.Where(x => x.Name.Contains(search))
+                                          .Select(x => x.Name)
+                                          .ToListAsync(CancellationToken);
         }
 
         #endregion
