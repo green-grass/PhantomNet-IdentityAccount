@@ -57,7 +57,16 @@ namespace PhantomNet.AspNetCore.IdentityAccount
             var identityResult = await UserManager.CreateAsync(user, viewModel.Password);
             if (identityResult.Succeeded)
             {
-                return GenericResult.Success;
+                identityResult = await UserManager.AddToRolesAsync(user, viewModel.Roles);
+
+                if (identityResult.Succeeded)
+                {
+                    return GenericResult.Success;
+                }
+                else
+                {
+                    return GenericResult.Failed(GenericErrorsFromIdentityResult(identityResult));
+                }
             }
             else
             {
@@ -97,6 +106,23 @@ namespace PhantomNet.AspNetCore.IdentityAccount
                     var errors = GenericErrorsFromIdentityResult(identityResult);
                     result = GenericResult.Failed(result.Succeeded ? errors : result.Errors.Concat(errors).ToArray());
                 }
+            }
+
+            var oldRoles = await UserManager.GetRolesAsync(user);
+            var rolesToRemove = oldRoles.Where(x => !viewModel.Roles.Contains(x));
+            identityResult = await UserManager.RemoveFromRolesAsync(user, rolesToRemove);
+            if (!identityResult.Succeeded)
+            {
+                var errors = GenericErrorsFromIdentityResult(identityResult);
+                result = GenericResult.Failed(result.Succeeded ? errors : result.Errors.Concat(errors).ToArray());
+            }
+
+            var rolesToAdd = viewModel.Roles.Where(x => !oldRoles.Contains(x));
+            identityResult = await UserManager.AddToRolesAsync(user, rolesToAdd);
+            if (!identityResult.Succeeded)
+            {
+                var errors = GenericErrorsFromIdentityResult(identityResult);
+                result = GenericResult.Failed(result.Succeeded ? errors : result.Errors.Concat(errors).ToArray());
             }
 
             return result;

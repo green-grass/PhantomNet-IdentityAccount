@@ -1,4 +1,6 @@
-﻿namespace PhantomNet.AspNetCore.IdentityAccount
+﻿using System.Collections.Generic;
+
+namespace PhantomNet.AspNetCore.IdentityAccount
 {
     public class IdentityAccountViewModel
     {
@@ -7,5 +9,7 @@
         public string Email { get; set; }
 
         public string Password { get; set; }
+
+        public ICollection<string> Roles { get; set; }
     }
 }
