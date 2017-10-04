@@ -17,8 +17,9 @@ namespace PhantomNet.AspNetCore.IdentityAccount
     {
         public IdentityAccountManager(
             UserManager<TAccount> userManager,
+            RoleManager<IdentityRole> roleManager,
             IHttpContextAccessor contextAccessor)
-            : base(userManager, contextAccessor)
+            : base(userManager, roleManager, contextAccessor)
         { }
     }
 
@@ -33,7 +34,7 @@ namespace PhantomNet.AspNetCore.IdentityAccount
 
         public IdentityAccountManager(
             UserManager<TAccount> userManager,
-            RoleManager<Role> roleManager,
+            RoleManager<IdentityRole> roleManager,
             IHttpContextAccessor contextAccessor)
         {
             _context = contextAccessor?.HttpContext;
