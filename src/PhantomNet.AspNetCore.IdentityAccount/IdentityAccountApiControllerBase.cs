@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Localization;
 using PhantomNet.AspNetCore.IdentityAccount.Resources;
 using PhantomNet.Entities.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace PhantomNet.AspNetCore.IdentityAccount
 {
@@ -24,6 +26,15 @@ namespace PhantomNet.AspNetCore.IdentityAccount
         }
 
         private IdentityAccountErrorDescriber ErrorDescriber { get; set; }
+
+
+        [HttpGet("roles")]
+        public Task<IEnumerable<string>> Roles(string token)
+        {
+            Response.Headers["token"] = token;
+            Response.Headers["fixed"] = true.ToString();
+            return Manager.GetRolesAsync();
+        }
 
         protected override GenericError DescribeModelNotFoundError(IdentityAccountViewModel viewModel)
         {

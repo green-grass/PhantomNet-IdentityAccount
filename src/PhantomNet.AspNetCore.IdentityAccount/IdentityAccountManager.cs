@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using PhantomNet.Entities;
+using System.Collections.Generic;
 
 namespace PhantomNet.AspNetCore.IdentityAccount
 {
@@ -32,11 +33,13 @@ namespace PhantomNet.AspNetCore.IdentityAccount
 
         public IdentityAccountManager(
             UserManager<TAccount> userManager,
+            RoleManager<Role> roleManager,
             IHttpContextAccessor contextAccessor)
         {
             _context = contextAccessor?.HttpContext;
 
             UserManager = userManager;
+            RoleManager = roleManager;
         }
 
         #endregion
@@ -46,6 +49,8 @@ namespace PhantomNet.AspNetCore.IdentityAccount
         protected virtual CancellationToken CancellationToken => _context?.RequestAborted ?? CancellationToken.None;
 
         protected UserManager<TAccount> UserManager { get; }
+
+        protected RoleManager<IdentityRole> RoleManager { get; }
 
         #endregion
 
@@ -157,6 +162,11 @@ namespace PhantomNet.AspNetCore.IdentityAccount
                                                   .Select(x => Mapper.Map<IdentityAccountViewModel>(x))
                                                   .AsQueryable()
             };
+        }
+
+        public virtual async Task<IEnumerable<string>> GetRolesAsync()
+        {
+            return await RoleManager.Roles.Select(x => x.Name).ToListAsync(CancellationToken);
         }
 
         #endregion
